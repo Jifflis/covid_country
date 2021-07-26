@@ -8,9 +8,7 @@ import '../env.dart';
 import 'api.dart';
 
 class CountryRepository {
-  factory CountryRepository(ApiProvider apiProvider){
-    return  CountryRepository._(apiProvider);
-  }
+  factory CountryRepository(ApiProvider apiProvider)=>CountryRepository._(apiProvider);
 
   CountryRepository._(this.api);
 

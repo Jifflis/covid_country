@@ -11,7 +11,6 @@ class CovidInfoCubit extends Cubit<CovidInfoState>{
   Future<void> getInfectedCountry(String url)async{
     try{
       emit(CovidInfoLoading());
-      print('ok ka 1');
       emit(CovidInfoLoaded(await _covidRepository.getInfectedCountry(url)));
     }catch(_){
       emit(CovidInfoError());

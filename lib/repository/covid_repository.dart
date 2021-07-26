@@ -8,10 +8,7 @@ import '../env.dart';
 import 'api.dart';
 
 class CovidRepository{
-  factory CovidRepository(ApiProvider apiProvider){
-
-    return CovidRepository._(apiProvider);
-  }
+  factory CovidRepository(ApiProvider apiProvider)=>CovidRepository._(apiProvider);
 
   CovidRepository._(this.api);
   ApiProvider api;
@@ -32,6 +29,7 @@ class CovidRepository{
 
 
   Future<CovidCountry> getInfectedCountry(String? url) async{
+    print(url);
     final http.Response response = await api.get(url??'');
     final Map<String,dynamic> data = json.decode(response.body);
 
